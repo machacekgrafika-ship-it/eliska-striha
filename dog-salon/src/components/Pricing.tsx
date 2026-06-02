@@ -32,7 +32,12 @@ const completeService = [
   { name: 'Odholení kočky — klidné', price: '750 - 1 000 Kč' },
 ];
 
-const PriceRow = ({ name, price }) => (
+type PriceRowProps = {
+  name: string;
+  price: string;
+};
+
+const PriceRow = ({ name, price }: PriceRowProps) => (
   <div className="group flex justify-between items-center gap-4 py-3 border-b border-rose-100/50 last:border-0">
     <span className="text-[#5d4037] font-semibold text-[15px] leading-snug group-hover:text-[#f43f5e] transition-colors">
       {name}
