@@ -8,13 +8,17 @@ export const Hero = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <section className="relative min-h-[88vh] flex items-center pt-28 pb-10 overflow-hidden bg-transparent">
-      {/* Navigační menu */}
-      <header className="absolute top-0 left-0 right-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5">
-          <div className="bg-white/55 backdrop-blur-xl border border-white/70 shadow-[0_18px_60px_rgba(93,64,55,0.08)] rounded-[28px] px-5 lg:px-7 py-4">
+    <section className="relative min-h-[88vh] flex items-center pt-32 pb-10 overflow-hidden bg-transparent">
+      {/* Navigační menu - drží nahoře při scrollování */}
+      <header className="fixed top-0 left-0 right-0 z-[999]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4">
+          <div className="bg-white/72 backdrop-blur-2xl border border-white/80 shadow-[0_18px_60px_rgba(93,64,55,0.10)] rounded-[28px] px-5 lg:px-7 py-4">
             <div className="flex justify-between items-center">
-              <a href="#" onClick={closeMenu} className="flex items-center gap-3 font-black text-2xl text-[#5d4037] tracking-tighter">
+              <a
+                href="#"
+                onClick={closeMenu}
+                className="flex items-center gap-3 font-black text-2xl text-[#5d4037] tracking-tighter"
+              >
                 <div className="w-11 h-11 rounded-2xl bg-[#f43f5e]/10 flex items-center justify-center">
                   <PawPrint className="text-[#f43f5e] fill-[#f43f5e]" size={24} />
                 </div>
@@ -26,9 +30,15 @@ export const Hero = () => {
               </a>
 
               <nav className="hidden md:flex items-center gap-8 font-black text-[13px] uppercase tracking-wider text-[#8d6e63]">
-                <a href="#promeny" className="hover:text-[#f43f5e] transition-colors">Proměny</a>
-                <a href="#cenik" className="hover:text-[#f43f5e] transition-colors">Ceník</a>
-                <a href="#kontakt" className="hover:text-[#f43f5e] transition-colors">Kontakt</a>
+                <a href="#promeny" className="hover:text-[#f43f5e] transition-colors">
+                  Proměny
+                </a>
+                <a href="#cenik" className="hover:text-[#f43f5e] transition-colors">
+                  Ceník
+                </a>
+                <a href="#kontakt" className="hover:text-[#f43f5e] transition-colors">
+                  Kontakt
+                </a>
               </nav>
 
               <a
