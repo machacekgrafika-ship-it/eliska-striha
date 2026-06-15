@@ -8,34 +8,35 @@ import po3 from '../assets/po3.svg';
 import pred4 from '../assets/pred4.svg';
 import po4 from '../assets/po4.svg';
 
-const groomingTransformations = [
+const transformations = [
   {
     id: 1,
-    breed: 'Maltézský psík',
+    category: 'Střih a péče',
+    title: 'Maltézský psík',
     before: pred1,
     after: po1,
     desc: 'Kompletní střih, koupel a šetrné vyčesání plstí.',
   },
   {
     id: 2,
-    breed: 'Yorkshire terrier',
+    category: 'Střih a péče',
+    title: 'Yorkshire terrier',
     before: pred2,
     after: po2,
     desc: 'Zkrácení srsti, úprava hlavičky a čištění oušek.',
   },
-];
-
-const dentalTransformations = [
   {
     id: 3,
-    breed: 'Dentální hygiena',
+    category: 'Dentální hygiena',
+    title: 'Dentální hygiena',
     before: pred3,
     after: po3,
     desc: 'Ukázka chrupu před ošetřením a po šetrné dentální hygieně ultrazvukem bez narkózy.',
   },
   {
     id: 4,
-    breed: 'Dentální hygiena',
+    category: 'Dentální hygiena',
+    title: 'Dentální hygiena',
     before: pred4,
     after: po4,
     desc: 'Viditelné odstranění zubního kamene a zlepšení vzhledu chrupu po ošetření.',
@@ -43,21 +44,22 @@ const dentalTransformations = [
 ];
 
 type TransformationCardProps = {
+  category: string;
   title: string;
   before: string;
   after: string;
   desc: string;
-  type?: 'grooming' | 'dental';
 };
 
 const TransformationCard = ({
+  category,
   title,
   before,
   after,
   desc,
-  type = 'grooming',
 }: TransformationCardProps) => (
   <article className="group relative bg-white/62 backdrop-blur-xl rounded-[2.5rem] p-5 lg:p-7 shadow-[0_24px_70px_rgba(93,64,55,0.08)] border border-white/75 overflow-hidden">
+    {/* Jemný vnitřní glow */}
     <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/60 via-transparent to-rose-50/60 opacity-80" />
 
     <div className="relative z-10">
@@ -73,6 +75,10 @@ const TransformationCard = ({
             </span>
           </div>
 
+          <div className="inline-flex items-center mb-3 bg-[#f43f5e]/10 text-[#f43f5e] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full">
+            {category}
+          </div>
+
           <p className="text-sm lg:text-base font-medium text-[#8d6e63] leading-relaxed">
             {desc}
           </p>
@@ -84,12 +90,10 @@ const TransformationCard = ({
       </div>
 
       <div className="grid grid-cols-2 gap-4">
-        <div className="relative aspect-[4/5] rounded-[1.7rem] overflow-hidden bg-[#fff7f2] shadow-inner">
+        <div className="relative aspect-[4/5] rounded-[1.7rem] overflow-hidden bg-[#f8ebe4] shadow-inner">
           <img
             src={before}
-            className={`w-full h-full transition-transform duration-700 group-hover:scale-[1.04] ${
-              type === 'dental' ? 'object-contain p-3 bg-white' : 'object-cover'
-            }`}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             alt={`${title} před úpravou`}
           />
 
@@ -100,12 +104,10 @@ const TransformationCard = ({
           </div>
         </div>
 
-        <div className="relative aspect-[4/5] rounded-[1.7rem] overflow-hidden bg-[#fff7f2] shadow-md ring-4 ring-white/65">
+        <div className="relative aspect-[4/5] rounded-[1.7rem] overflow-hidden bg-[#f8ebe4] shadow-md ring-4 ring-white/65">
           <img
             src={after}
-            className={`w-full h-full transition-transform duration-700 group-hover:scale-[1.04] ${
-              type === 'dental' ? 'object-contain p-3 bg-white' : 'object-cover'
-            }`}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             alt={`${title} po úpravě`}
           />
 
@@ -126,6 +128,7 @@ const TransformationCard = ({
 
 export const Gallery = () => (
   <section id="promeny" className="relative py-28 px-6 lg:px-12 bg-transparent scroll-mt-12 overflow-hidden">
+    {/* Jemné dekorace v pozadí sekce */}
     <div className="absolute inset-0 z-0 pointer-events-none">
       <div className="absolute top-24 left-[-120px] w-[320px] h-[320px] rounded-full bg-rose-100/45 blur-[90px]" />
       <div className="absolute bottom-10 right-[-140px] w-[380px] h-[380px] rounded-full bg-amber-100/45 blur-[100px]" />
@@ -139,68 +142,26 @@ export const Gallery = () => (
         </div>
 
         <h2 className="text-4xl md:text-6xl font-black text-[#5d4037] mb-5 uppercase tracking-tighter">
-          Před a po
+          Proměny před a po
         </h2>
 
         <p className="text-lg md:text-xl text-[#8d6e63] font-medium max-w-2xl mx-auto leading-relaxed">
-          Ukázky péče, střihu i dentální hygieny. Každý pejsek odchází spokojenější,
-          upravenější a bez zbytečného stresu.
+          Ukázky střihu, péče o srst i dentální hygieny. Každý pejsek odchází
+          spokojenější, upravenější a bez zbytečného stresu.
         </p>
       </div>
 
-      <div className="mb-24">
-        <div className="text-center mb-10">
-          <h3 className="text-3xl md:text-4xl font-black text-[#5d4037] uppercase tracking-tighter mb-3">
-            Střih a péče o srst
-          </h3>
-
-          <p className="text-[#8d6e63] font-medium max-w-2xl mx-auto">
-            Proměny pejsků po kompletní péči v salonu.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-          {groomingTransformations.map((item) => (
-            <TransformationCard
-              key={item.id}
-              title={item.breed}
-              before={item.before}
-              after={item.after}
-              desc={item.desc}
-              type="grooming"
-            />
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-white/65 backdrop-blur-md border border-white/80 px-5 py-2 rounded-full text-[#8d6e63] text-[11px] font-black uppercase tracking-widest mb-5 shadow-sm">
-            <Sparkles size={14} className="text-[#f43f5e]" strokeWidth={2.5} />
-            <span>Šetrná péče o chrup</span>
-          </div>
-
-          <h3 className="text-3xl md:text-4xl font-black text-[#5d4037] uppercase tracking-tighter mb-3">
-            Dentální hygiena před a po
-          </h3>
-
-          <p className="text-[#8d6e63] font-medium max-w-2xl mx-auto">
-            Ukázky výsledků dentální hygieny ultrazvukem bez narkózy.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-          {dentalTransformations.map((item) => (
-            <TransformationCard
-              key={item.id}
-              title={item.breed}
-              before={item.before}
-              after={item.after}
-              desc={item.desc}
-              type="dental"
-            />
-          ))}
-        </div>
+      <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+        {transformations.map((item) => (
+          <TransformationCard
+            key={item.id}
+            category={item.category}
+            title={item.title}
+            before={item.before}
+            after={item.after}
+            desc={item.desc}
+          />
+        ))}
       </div>
 
       <div className="mt-14 flex justify-center">
