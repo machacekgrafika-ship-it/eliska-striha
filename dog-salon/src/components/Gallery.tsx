@@ -31,7 +31,7 @@ const transformations = [
     title: 'Dentální hygiena',
     before: pred3,
     after: po3,
-    desc: 'Ukázka chrupu před ošetřením a po šetrné dentální hygieně ultrazvukem bez narkózy.',
+    desc: 'Ukázka chrupu před ošetřením a po kosmetické dentální hygieně bez narkózy.',
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const transformations = [
     title: 'Dentální hygiena',
     before: pred4,
     after: po4,
-    desc: 'Viditelné odstranění zubního kamene a zlepšení vzhledu chrupu po ošetření.',
+    desc: 'Viditelné odstranění zubního kamene a dočištění ultrazvukovým kartáčkem.',
   },
 ];
 
@@ -59,7 +59,6 @@ const TransformationCard = ({
   desc,
 }: TransformationCardProps) => (
   <article className="group relative bg-white/62 backdrop-blur-xl rounded-[2.5rem] p-5 lg:p-7 shadow-[0_24px_70px_rgba(93,64,55,0.08)] border border-white/75 overflow-hidden">
-    {/* Jemný vnitřní glow */}
     <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/60 via-transparent to-rose-50/60 opacity-80" />
 
     <div className="relative z-10">
@@ -127,15 +126,14 @@ const TransformationCard = ({
 );
 
 export const Gallery = () => (
-  <section id="promeny" className="relative py-28 px-6 lg:px-12 bg-transparent scroll-mt-12 overflow-hidden">
-    {/* Jemné dekorace v pozadí sekce */}
+  <section id="promeny" className="relative py-20 px-6 lg:px-12 bg-transparent scroll-mt-12 overflow-hidden">
     <div className="absolute inset-0 z-0 pointer-events-none">
       <div className="absolute top-24 left-[-120px] w-[320px] h-[320px] rounded-full bg-rose-100/45 blur-[90px]" />
       <div className="absolute bottom-10 right-[-140px] w-[380px] h-[380px] rounded-full bg-amber-100/45 blur-[100px]" />
     </div>
 
     <div className="max-w-7xl mx-auto relative z-10">
-      <div className="text-center mb-16">
+      <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 bg-white/65 backdrop-blur-md border border-white/80 px-5 py-2 rounded-full text-[#8d6e63] text-[11px] font-black uppercase tracking-widest mb-6 shadow-sm">
           <Scissors size={14} className="text-[#f43f5e]" strokeWidth={2.5} />
           <span>Ukázky péče v salonu</span>
@@ -164,7 +162,7 @@ export const Gallery = () => (
         ))}
       </div>
 
-      <div className="mt-14 flex justify-center">
+      <div className="mt-12 flex justify-center">
         <div className="inline-flex items-center gap-3 bg-white/60 backdrop-blur-md border border-white/80 rounded-3xl px-6 py-4 shadow-sm text-[#8d6e63] font-semibold text-sm md:text-base">
           <PawPrint size={18} className="text-[#f43f5e] fill-[#f43f5e]" />
           <span>Každá péče je přizpůsobená srsti, povaze i individuálním potřebám pejska.</span>

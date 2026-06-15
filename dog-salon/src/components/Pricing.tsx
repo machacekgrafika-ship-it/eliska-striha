@@ -52,14 +52,14 @@ export const Pricing = () => {
   return (
     <>
       {/* CENÍK */}
-      <section id="cenik" className="relative py-28 px-6 lg:px-12 bg-transparent scroll-mt-12 overflow-hidden">
+      <section id="cenik" className="relative py-20 px-6 lg:px-12 bg-transparent scroll-mt-12 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-24 right-[-160px] w-[420px] h-[420px] rounded-full bg-rose-100/50 blur-[110px]" />
           <div className="absolute bottom-24 left-[-160px] w-[420px] h-[420px] rounded-full bg-amber-100/50 blur-[110px]" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-white/65 backdrop-blur-md border border-white/80 px-5 py-2 rounded-full text-[#8d6e63] text-[11px] font-black uppercase tracking-widest mb-6 shadow-sm">
               <PawPrint size={14} className="text-[#f43f5e] fill-[#f43f5e]" />
               <span>Péče na míru každému pejskovi</span>
@@ -132,14 +132,15 @@ export const Pricing = () => {
                         Dentální hygiena
                       </h3>
                       <p className="text-[#8d6e63] font-semibold text-sm mt-1">
-                        ultrazvukem bez narkózy
+                        kosmetické ošetření bez narkózy
                       </p>
                     </div>
                   </div>
 
                   <p className="text-sm font-medium text-[#8d6e63] mb-6 leading-relaxed">
-                    Provádí se ultrazvukovým kartáčkem CleanyTeeth bez narkózy či sedativ.
-                    Ošetření je bezbolestné a šetrné.
+                    Dentální hygiena je kosmetické ošetření, které se provádí bez narkózy.
+                    Zubní kámen se odstraňuje mechanicky a dočištění probíhá za pomocí
+                    ultrazvukového kartáčku, který nevydává zvuk ani vibrace.
                   </p>
 
                   <div className="flex flex-col">
@@ -202,7 +203,7 @@ export const Pricing = () => {
       </section>
 
       {/* KONTAKT, OTEVÍRACÍ DOBA A PATIČKA */}
-      <section id="kontakt" className="relative py-28 px-6 lg:px-12 bg-transparent scroll-mt-12 overflow-hidden">
+      <section id="kontakt" className="relative py-20 px-6 lg:px-12 bg-transparent scroll-mt-12 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-white/55 blur-[110px]" />
         </div>
@@ -303,7 +304,7 @@ export const Pricing = () => {
           </div>
         </div>
 
-        <footer className="max-w-7xl mx-auto mt-20 pt-8 border-t border-rose-100/70 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-semibold text-[#8d6e63] relative z-10">
+        <footer className="max-w-7xl mx-auto mt-12 pt-8 border-t border-rose-100/70 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-semibold text-[#8d6e63] relative z-10">
           <p>© {new Date().getFullYear()} Eliška stříhá. Všechna práva vyhrazena.</p>
           <p className="italic flex items-center gap-2">
             <PawPrint size={14} className="text-[#f43f5e] fill-[#f43f5e]" />
